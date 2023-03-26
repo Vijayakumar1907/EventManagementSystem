@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.not_comp_OuterContainer {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.not_comp_OuterContainer .not_comp_header {
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.not_comp_OuterContainer .not_comp_events {
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 12px;
+
+}
+
+.upcomming_child {
+
+    width: 250px;
+    padding: 10px;
+    border: #c7c7c7 solid 0.5px;
+    border-radius: 6px;
+    margin-right: 12px;
+
+}
+
+.upcomming_child .card_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.upcomming_child .card_img {
+    width: 100%;
+}
+
+.upcomming_child .btn_containers_up {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upcomming_child .card_date_time {
+
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: smaller;
+    color: #414141;
+    margin-top: 6px;
+}
+
+.upcomming_child .function_type {
+    font-size: small;
+    margin-top: 8px;
+}
+
+.upcomming_child .vd_btn {
+    align-self: flex-end;
+    padding: 8px 8px;
+    background-color: #11304D;
+    color: white;
+    border: transparent solid 0.5px;
+    border-radius: 4px;
+
+}
+
+.upcomming_child .vd_btn:hover {
+    background-color: transparent;
+    border: #11304D solid 0.5px;
+    color: #11304D;
+}

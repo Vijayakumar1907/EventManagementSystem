@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/dashboard_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="outer_container">
+        <div class="side_nav_container">
+
+            <div class="nav_title">
+                <p class="title-txt">Function Management System</p>
+            </div>
+
+
+            <div class="sidebar">
+                <a class="active" href="/dashboard"><i style="margin-right: 8px;" class="fa-solid fa-house"></i>Home</a>
+                <a href="/event"><i style="margin-right: 8px;" class="fa-solid fa-list"></i>Event Details</a>
+            </div>
+
+
+
+        </div>
+
+        <div class="details_container">
+            <div class="top_header">
+                <p>{{account[1]}}</p>
+                <div class="btns_container">
+                    <a href="/create_event"><button class="logout_btn">Add event</button></a>
+                    <a href="/logout"><button class="logout_btn">Logout</button></a>
+                </div>
+                
+            </div>
+            <!-- if(!isesists){
+            no data
+            }
+            else{
+                
+            }-->
+            {% if(length > 0) %}
+            <div class="inner_details_container">
+                <p>{{msg}}</p>
+                <div class="inner_top_bar">
+                    <p style="font-weight: 500; font-size: larger;">Upcomming Events</p>
+                    <a href="/viewall_notComp">View all</a>
+                </div>
+
+
+                <div class="upcomming_parent">
+                    <!-- code for displaying upcomming events -->
+                    {% for event in event_data %}
+                    <div class="upcomming_child">
+                        <img class="card_img" src="/static/card_image.jpg" alt="Loading">
+                        <div class="card_details">
+                            <p class="card_title">{{ event[2] }}</p>
+                            <div class="card_date_time">
+                                <p class="date">{{event[21]}}</p>
+                                <p>|</p>
+                                <p class="time">{{event[20]}}</p>
+                            </div>
+                            <p class="function_type">{{event[3]}}</p>
+                            <div class="btn_containers_up">
+                                <a href="{{url_for('view_event', id = event[0])}}"><button class="vd_btn">View Details</button></a>
+                                <a href="{{url_for('print_tables',ids = event[0])}}">print</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="inner_top_bar">
+                    <p style="font-weight: 500; font-size: larger; margin-top: 12px;">Completed Events</p>
+                    <a href="/viewall_comp">View all</a>
+                </div>
+                <div style="margin-top: 9px;" class="upcomming_parent">
+
+                    <!-- code for displaying completed events -->
+                    {% for events in comp_data %}
+                    <div class="upcomming_child">
+                        <img class="card_img" src="/static/card_image.jpg" alt="Loading">
+                        <div class="card_details">
+                            <p class="card_title">{{events[2]}}</p>
+                            <div class="card_date_time">
+                                <p class="date">{{events[21].strftime('%d %B, %Y')}}</p>
+                                <p>|</p>
+                                <p class="time">{{events[20]}}</p>
+                            </div>
+                            <p class="function_type">{{events[3]}}</p>
+                            <div class="btn_containers_up">
+                                <a href="{{url_for('view_event', id = events[0])}}"><button class="vd_btn">View Details</button></a>
+                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
+            <div class="inner_details_empty_container">
+                <div class="contents">
+                    <p style="font-size:larger ; font-weight:500 ;">Can't find anything here</p>
+                    <p style="font-size: smaller; color: rgb(119, 119, 119);">Create a new event</p>
+                    <!-- <button class="create_event_btn">Create event</button> -->
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+</body>
+
+</html>

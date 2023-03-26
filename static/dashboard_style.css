@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* body {} */
+
+.outer_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.side_nav_container {
+    background-image: url("/static/side_menu_background.jpg");
+    height: 100vh;
+    width: 300px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.side_nav_container .nav_title {
+    font-size: x-large;
+    text-align: center;
+    padding: 6px;
+    margin-top: 16px;
+    color: white;
+
+
+}
+
+
+.side_nav_container.sidebar {
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar {
+    margin-top: 28px;
+
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+
+    text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: #cbdceb5b;
+    color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: #cbdceb13;
+    color: white;
+}
+
+.details_container {
+    width: 100%;
+    height: 100vh;
+}
+
+.details_container .top_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    height: 8vh;
+
+    border: #afafaf 0.5px solid;
+    align-items: center;
+    border-style: outset;
+}
+
+.top_header .btns_container{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+
+.details_container .top_header .logout_btn {
+    padding: 6px 14px 6px 14px;
+    background-color: #11304D;
+    /* border: none; */
+    color: white;
+    border: transparent solid 1px;
+
+    border-radius: 4px;
+    font-weight: 400;
+
+}
+
+
+.details_container .logout_btn:hover {
+
+    background-color: transparent;
+    border: #11304D solid 1px;
+    color: #11304D;
+
+}
+
+.outer_container .details_container .inner_details_container {
+
+    height: 90vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    margin: 14px 14px;
+}
+
+.details_container .inner_details_empty_container {
+    display: flex;
+    height: 92vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner_details_empty_container .contents {
+
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    gap: 6px;
+
+}
+
+.inner_details_empty_container .contents .create_event_btn {
+    padding: 6px 10px 6px 10px;
+    border: transparent solid 0.5px;
+    background-color: #11304D;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.create_event_btn:hover {
+    border: #11304D solid 0.5px;
+    color: white;
+    background-color: RED !important;
+}
+
+.outer_container .details_container .inner_details_container .upcomming_parent {
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+}
+
+.outer_container .details_container .inner_details_container .inner_top_bar {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.upcomming_parent {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+
+}
+
+.upcomming_parent .upcomming_child {
+
+    width: 250px;
+    padding: 10px;
+    border: #c7c7c7 solid 0.5px;
+    border-radius: 6px;
+    margin-right: 12px;
+
+}
+
+.upcomming_child .card_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.upcomming_child .btn_containers_up{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upcomming_parent .upcomming_child .card_img {
+
+    width: 100%;
+    height: 180px;
+}
+
+.upcomming_parent .upcomming_child .card_title {
+
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+.upcomming_child .card_date_time {
+
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: smaller;
+    color: #414141;
+    margin-top: 6px;
+}
+
+.upcomming_child .function_type {
+    font-size: small;
+    margin-top: 8px;
+}
+
+.upcomming_child .vd_btn {
+    align-self: flex-end;
+    padding: 8px 8px;
+    background-color: #11304D;
+    color: white;
+    border: transparent solid 0.5px;
+    border-radius: 4px;
+
+}
+
+.upcomming_child .vd_btn:hover {
+    background-color: transparent;
+    border: #11304D solid 0.5px;
+    color: #11304D;
+}

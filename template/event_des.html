@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Description</title>
+    <link rel="stylesheet" href="../static/event_des.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- <p>{{d_msg}}</p>
+    <p>{{account}}</p>
+
+    <a href="/dashboard"><button>close</button></a> -->
+
+    <div class="des_outer_container">
+        <div class="des_top_bar">
+            <p class="dept_name">{{admin_acc[1]}}</p>
+            <a href="/dashboard"><button class="close_btn">Close</button></a>
+        </div>
+
+        <div class="des_container">
+            <div class="date_container">
+                <p class="date">{{d_account[21].strftime('%d %B, %Y')}}</p>
+                <p>|</p>
+                <p class="time">{{d_account[20]}}</p>
+            </div>
+            <p class="event_name">{{d_account[2]}}</p>
+
+            <img class="des_image" src="/static/back_img_large.jpg" alt="Loading">
+            <br>
+            <p style="font-size:larger; font-weight: bold;">Basic Details</p>
+            <br>
+            <div class="inner_des_container">
+                <div class="inner_des_que">
+                    <p>Event type</p>
+                    <p>Organizing Department</p>
+                    <p>Name of the HoD</p>
+                    <p>Participating College</p>
+                    <p>Participating Department</p>
+                    <p>Event Mode</p>
+                    <p>Guest Details</p>
+                    <p>Alumni Batch number</p>
+                    <p>Alumni College name</p>
+                    <p>Staff Co-ordinator</p>
+                    <p>Student Co-ordinator</p>
+                    <p>Staff Rapportuer</p>
+                    <p>Student Rapportuer</p>
+                    <p>Level of the Function</p>
+                    <p>Type of Participants</p>
+                    <p>Number of Participants</p>
+                    <p>Number of days</p>
+
+                </div>
+
+                <div class="inner_des_ans">
+                    <p>:  {{d_account[3]}}</p>
+                    <p>:  {{d_account[4]}}</p>
+                    <p>:  {{d_account[5]}}</p>
+                    <p>:  {{d_account[6]}}</p>
+                    <p>:  {{d_account[7]}}</p>
+                    <p>:  {{d_account[8]}}</p>
+                    <p>:  {{d_account[9]}}</p>
+                    <p>:  {{d_account[10]}}</p>
+                    <p>:  {{d_account[11]}}</p>
+                    <p>:  {{d_account[12]}}</p>
+                    <p>:  {{d_account[13]}}</p>
+                    <p>:  {{d_account[14]}}</p>
+                    <p>:  {{d_account[15]}}</p>
+                    <p>:  {{d_account[16]}}</p>
+                    <p>:  {{d_account[17]}}</p>
+                    <p>:  {{d_account[18]}}</p>
+                    <p>:  {{d_account[19]}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

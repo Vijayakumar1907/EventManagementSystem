@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Completed Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="../static/view_all_notComp_staff.css">
+</head>
+
+<body>
+
+    <div class="not_comp_OuterContainer">
+        <div class="not_comp_header">
+            <p>Upcomming Events</p>
+            <a href="#"><i style="margin-right: 8px;" class="fa-solid fa-close"></i></a>
+        </div>
+
+        {% if (nc_length > 0) %}
+        <div class="not_comp_events">
+            {% for events in not_comp_data %}
+            <div class="upcomming_child">
+                <img class="card_img" src="/static/card_image.jpg" alt="Loading">
+                <div class="card_details">
+                    <p class="card_title">{{events[2]}}</p>
+                    <div class="card_date_time">
+                        <p class="date">{{events[21].strftime('%d %B, %Y')}}</p>
+                        <p>|</p>
+                        <p class="time">{{events[20]}}</p>
+                    </div>
+                    <p class="function_type">{{events[3]}}</p>
+                    <div class="btn_containers_up">
+                        <a href="{{url_for('view_event', id = events[0])}}"><button class="vd_btn">View Details</button></a>
+        
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% else %}
+
+        <div class="not_comp_empty">
+            <p>Can't find anything here</p>
+        </div>
+
+        {% endif %}
+    </div>
+
+</body>
+
+</html>

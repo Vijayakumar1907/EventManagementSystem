@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/login_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- 
+    <div class="outer-box">
+        <div class="image-box">
+            <p class="title-login">FUNCTION APPROVAL SYSTEM</p>
+        </div>
+        <div class="login-box">
+            <div class="user-login-child">
+                <p>Sign In</p>
+                <div class="dept-pass-child">
+                    <p>Department</p>
+                    <input class="text-box-login" type="text" placeholder="Computer Science Engineering">
+                </div>
+                <div class="dept-pass-child">
+                    <p>Password</p>
+                    <input class="text-box-login" type="text" placeholder="Enter your Password">
+                </div>
+
+                <div class="dept-pass-child">
+                    <input class="login-submit-button" type="button" value="Login">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="container">
+        <div class="container__heading">
+            <div class="background_image">
+                <h1 class="main__heading">Function Management System</h1>
+            </div>
+        </div>
+        <div class="container__formContainer">
+            <form action="/login" class="form" method="POST" enctype="multipart/form-data">
+                <h2 class="form__title">Sign In</h2>
+                <div class="form__inputContainer">
+                    <label for="department">Department</label>
+                    <select class="user__input" id="department" name="department">
+                        {% for j in data %}
+                        <option value={{j[0]}}>{{j[0]}}</option>
+                        {% endfor %}
+
+                    </select>
+                    <!-- <input id="department" type="text" class="user__input" name="dept"> -->
+                </div>
+                <div class="form__inputContainer">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" class="user__input" name="password">
+                </div>
+                <input class="btn btn--primary" type="submit" value="Login to Dashboard">
+                <!-- <input class="btn btn--secondary" type="submit" value="Login to Dashboard"> -->
+            </form>
+
+            <p>{{msg}}</p>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

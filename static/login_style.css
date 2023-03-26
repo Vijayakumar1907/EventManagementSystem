@@ -1,0 +1,125 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary: hsl(209, 64%, 18%);
+    --primary-dark: hsl(209, 64%, 10%);
+}
+
+/* varun */
+
+.container {
+    padding: 10px;
+    display: flex;
+    height: 100vh;
+}
+
+.container__heading {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/static/side_menu_background.jpg);
+}
+
+/* .background_image {} */
+
+.main__heading {
+    text-align: center;
+    color: white;
+}
+
+.container__formContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    padding: 20px;
+    width: 50%;
+    /* background-color: gray; */
+    border-color: darkslategray;
+}
+
+.form__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form__inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.user__input {
+    padding: 5px 10px;
+}
+
+.btn {
+    outline: none;
+    width: 100%;
+    padding: 8px;
+    /* background-color: transparent; */
+    cursor: pointer;
+    border: 1px solid black;
+    transition: transform .4s ease;
+}
+
+
+.btn--primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn--primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+
+.btn--secondary {
+    background-color: transparent;
+}
+
+.btn--secondary:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-1px);
+
+}
+
+
+.btn--primary:active,
+.btn--secondary:active {
+    transform: translateY(1px);
+}
+
+@media screen and (max-width : 768px) {
+    .container {
+        flex-direction: column;
+
+    }
+
+    .container__heading {
+        height: auto;
+        flex: 0;
+        background-color: transparent;
+        background-image: none;
+    }
+
+    .container__formContainer {
+        align-items: flex-start;
+    }
+
+    .form {
+        width: 80%;
+        margin-top: 28px;
+    }
+}

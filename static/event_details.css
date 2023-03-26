@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* body {} */
+
+.outer_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.side_nav_container {
+    background-image: url("../static/side_menu_background.jpg");
+    height: 104vh;
+    width: 300px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.side_nav_container .nav_title {
+    font-size: x-large;
+    text-align: center;
+    padding: 6px;
+    margin-top: 16px;
+    color: white;
+
+
+}
+
+
+.side_nav_container.sidebar {
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar {
+    margin-top: 28px;
+
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+
+    text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: #cbdceb5b;
+    color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: #cbdceb13;
+    color: white;
+}
+
+.details_container {
+    width: 100%;
+    height: auto;
+}
+
+.details_container .top_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    height: 8vh;
+    justify-items: center;
+    border: #afafaf 0.5px solid;
+    align-items: center;
+    border-style: outset;
+}
+
+.top_header .btns_container {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.details_container .top_header .logout_btn {
+    padding: 6px 14px 6px 14px;
+    background-color: #11304D;
+    /* border: none; */
+    color: white;
+    border: transparent solid 1px;
+
+    border-radius: 4px;
+    font-weight: 400;
+
+}
+
+.details_container .logout_btn:hover {
+
+    background-color: transparent;
+    border: #11304D solid 1px;
+    color: #11304D;
+
+}
+
+.details_container .inner_details_container {
+
+   
+    height: 92vh;
+    overflow-y: scroll;
+    display: flex;
+}
+
+.inner_details_container .event_det_title{
+
+    font-size: larger;
+    font-weight: 400;
+}
+
+.t_header_title{
+    font-weight: 600;
+}
+
+.cmp_txt{
+    color: rgb(0, 158, 0);
+}
+
+.cmp_txt_not{
+    color: rgb(255, 91, 91);
+}
+
+.rpt_txt{
+    color: rgb(255, 91, 91);
+}

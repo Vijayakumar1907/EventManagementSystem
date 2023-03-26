@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Vendor.css">
+    <title>Item</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <div class="topic">
+                    <h2>INVENTORY MANAGEMNET SYSTEM</h2>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <!--profile image & text-->
+            <!--menu item-->
+            <div class="profile">
+                <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
+                    alt="profile_picture">
+                <h3>Admin</h3>
+            </div>
+            <ul>
+                <li>
+                    <a href="Home.html">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Item.html">
+                        <span class="icon"><i class='fas fa-shopping-basket'></i></span>
+                        <span class="item">Item</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Customers.html">
+                        <span class="icon"><i class="fas fa-users"></i></span>
+                        <span class="item">Customer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Sale.html">
+                        <span class="icon"><i class="fas fa-tags"></i></span>
+                        <span class="item">Sale</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Vendor.html" class="active">
+                        <span class="icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="item">Vendor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Reports.html">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Search.html">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <span class="item">Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Logout.html">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <span class="item">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function () {
+            document.querySelector("body").classList.toggle("active");
+        })
+    </script>
+    </div>
+</body>
+
+</html>

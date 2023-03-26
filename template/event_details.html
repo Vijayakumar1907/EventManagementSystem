@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/dashboard_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="../static/event_details.css">
+</head>
+
+<body>
+    <div class="outer_container">
+        <div class="side_nav_container">
+
+            <div class="nav_title">
+                <p class="title-txt">Function Management System</p>
+            </div>
+
+
+            <div class="sidebar">
+                <a href="/dashboard"><i style="margin-right: 8px;" class="fa-solid fa-house"></i>Home</a>
+                <a class="active" href="/event"><i style="margin-right: 8px;" class="fa-solid fa-list"></i>Event
+                    Details</a>
+            </div>
+
+
+
+        </div>
+
+        <div class="details_container">
+            <div class="top_header">
+                <p>{{account[1]}}</p>
+                <div class="btns_container">
+                    <a href="/create_event"><button class="logout_btn">Add event</button></a>
+                    <a href="/logout"><button class="logout_btn">Logout</button></a>
+                </div>
+            </div>
+            <div class="inner_details_container">
+                <p class="event_det_title">Events</p>
+
+                <table class="table table-striped">
+                    <tr>
+                        <th class="t_header_title">S.no</th>
+                        <th class="t_header_title">Function name</th>
+                        <th class="t_header_title">Completed status</th>
+                        <!-- <th class="t_header_title">Reported status</th> -->
+                        <th class="t_header_title">Edit</th>
+                    </tr>
+                    {% for event_td in event_table %}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{event_td[2]}}</td>
+                        {% if event_td[21] > t_date %}
+                        <td class="cmp_txt_not">Not Completed</td>
+                        {% else %}
+                        <td class="cmp_txt">Completed</td>
+                        {% endif %}
+                        <!-- <td class="rpt_txt">Reported</td> -->
+                        <td><a style="text-decoration-style: none;"
+                                href="{{url_for('edit_event', id = event_td[0])}}">Edit</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

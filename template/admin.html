@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/admin.css">
+    <title>Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="outer_container">
+        <div class="side_nav_container">
+
+            <div class="nav_title">
+                <p class="title-txt">Function Management System</p>
+            </div>
+
+
+            <div class="sidebar">
+                <a class="active" href="#"><i style=" margin-right: 8px;" class="fa-solid fa-shapes"></i>Department</a>
+                <a href="#"><i style="margin-right: 8px;" class="fa-solid fa-list-check"></i>Overall Events</a>
+            </div>
+
+
+
+        </div>
+
+        <div class="details_container">
+            <div class="top_header">
+                <p>Paavai Engineering College(Admin)</p>
+                <div class="btns_container">
+                    <a href="#"><button class="logout_btn">Logout</button></a>
+                </div>
+
+            </div>
+
+            <div class="inner_details_container">
+
+                {% for ad in admin_account %}
+
+                {% if ad[0] == '2001' %}
+                {% continue %}
+                {% else %}
+
+                <div class="dept_card">
+                    <p class="dept_title">COMPUTER SCIENCE AND ENGINEERING</p>
+                    <hr>
+                    <div class="regis_events">
+                        <p class="total_regis">24</p>
+                        <p>Events Registered</p>
+                    </div>
+
+                    <div class="event_status">
+                        <div class="comp_ev">
+                            <p class="status_no">12</p>
+                            <p>Completed</p>
+                        </div>
+                        <div class="not_comp_ev">
+                            <p class="status_no">12</p>
+                            <p>Not Completed</p>
+                        </div>
+                        <div class="reported_ev">
+                            <p class="status_no">12</p>
+                            <p>Reported</p>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <a class="view_det_txt" href="#">
+                        <p>View details</p>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
